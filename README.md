@@ -46,9 +46,9 @@ AutoFix Workshop Management is a web application designed for auto repair shops.
 ### Roadmap
 
 - [x] Initial project setup (Vite, React 19, TypeScript, TailwindCSS v4).
-- [ ] Base layout and TailwindCSS UI components.
-- [ ] Form integration and typing with React Hook Form.
-- [ ] Error alert component for form validation.
+- [x] Base layout and TailwindCSS UI components.
+- [x] Form integration and typing with React Hook Form.
+- [x] Error alert component for form validation.
 - [ ] Zustand store creation with TypeScript and Redux DevTools.
 - [ ] Vehicle repair list and detailed order cards.
 - [ ] Edit mode synchronization with form fields.
@@ -116,9 +116,9 @@ AutoFix Workshop Management es una aplicación web pensada para talleres mecáni
 ### Hoja de Ruta
 
 - [x] Configuración inicial del proyecto (Vite, React 19, TypeScript, TailwindCSS v4).
-- [ ] Maquetación base y componentes de interfaz con TailwindCSS.
-- [ ] Integración y tipado de formularios con React Hook Form.
-- [ ] Componente para mensajes de error en validaciones.
+- [x] Maquetación base y componentes de interfaz con TailwindCSS.
+- [x] Integración y tipado de formularios con React Hook Form.
+- [x] Componente para mensajes de error en validaciones.
 - [ ] Creación y tipado del Store con Zustand y conexión con Redux DevTools.
 - [ ] Listado de reparaciones y tarjetas de información de órdenes.
 - [ ] Sincronización del formulario en modo edición.
