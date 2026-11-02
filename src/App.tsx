@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import VehicleForm from "./components/VehicleForm";
 import VehiclesList from "./components/VehiclesList";
 
@@ -15,6 +16,8 @@ export default function App() {
           <VehiclesList />
         </div>
       </div>
+
+      <ToastContainer />
     </>
   );
 }

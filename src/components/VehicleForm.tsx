@@ -1,19 +1,47 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import Error from "./Error";
 import type { DraftVehicle } from "../types";
 import { useVehicleStore } from "../store";
 
 export default function VehicleForm() {
   const addVehicle = useVehicleStore((state) => state.addVehicle);
+  const activeId = useVehicleStore((state) => state.activeId);
+  const vehicles = useVehicleStore((state) => state.vehicles);
+  const updateVehicle = useVehicleStore((state) => state.updateVehicle);
+
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
     reset,
   } = useForm<DraftVehicle>({ mode: "onChange" });
 
+  useEffect(() => {
+    if (activeId) {
+      const activeVehicle = vehicles.find((vehicle) => vehicle.id === activeId);
+
+      if (activeVehicle) {
+        setValue("vehicle", activeVehicle.vehicle);
+        setValue("name", activeVehicle.name);
+        setValue("email", activeVehicle.email);
+        setValue("date", activeVehicle.date);
+        setValue("issue", activeVehicle.issue);
+      }
+    }
+  }, [activeId]);
+
   const registerVehicle = (data: DraftVehicle) => {
-    addVehicle(data);
+    if (activeId) {
+      updateVehicle(data);
+      toast.success("Vehicle Updated Successfully");
+    } else {
+      addVehicle(data);
+      toast.success("Vehicle Registered Successfully");
+    }
+
     reset();
   };
 
@@ -32,7 +60,7 @@ export default function VehicleForm() {
         onSubmit={handleSubmit(registerVehicle)}
       >
         <div className="mb-5">
-          <label htmlFor="name" className="text-sm uppercase font-bold">
+          <label htmlFor="vehicle" className="text-sm uppercase font-bold">
             Vehicle
           </label>
           <input
@@ -49,7 +77,7 @@ export default function VehicleForm() {
         </div>
 
         <div className="mb-5">
-          <label htmlFor="owner" className="text-sm uppercase font-bold">
+          <label htmlFor="name" className="text-sm uppercase font-bold">
             Owner
           </label>
           <input
