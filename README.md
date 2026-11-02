@@ -50,7 +50,7 @@ AutoFix Workshop Management is a web application designed for auto repair shops.
 - [x] Form integration and typing with React Hook Form.
 - [x] Error alert component for form validation.
 - [ ] Zustand store creation with TypeScript and Redux DevTools.
-- [ ] Vehicle repair list and detailed order cards.
+- [x] Vehicle repair list and detailed order cards.
 - [ ] Edit mode synchronization with form fields.
 - [ ] Delete action with confirmation.
 - [ ] Toast notifications with React-Toastify.
@@ -120,7 +120,7 @@ AutoFix Workshop Management es una aplicación web pensada para talleres mecáni
 - [x] Integración y tipado de formularios con React Hook Form.
 - [x] Componente para mensajes de error en validaciones.
 - [ ] Creación y tipado del Store con Zustand y conexión con Redux DevTools.
-- [ ] Listado de reparaciones y tarjetas de información de órdenes.
+- [x] Listado de reparaciones y tarjetas de información de órdenes.
 - [ ] Sincronización del formulario en modo edición.
 - [ ] Eliminación de registros con confirmación.
 - [ ] Alertas y notificaciones visuales con React-Toastify.

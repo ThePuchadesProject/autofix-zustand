@@ -4,7 +4,7 @@ export type Vehicle = {
   name: string;
   email: string;
   date: Date;
-  symptoms: string;
+  issue: string;
 };
 
 export type DraftVehicle = Omit<Vehicle, "id">;

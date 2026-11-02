@@ -1,16 +1,20 @@
 import { useForm } from "react-hook-form";
 import Error from "./Error";
 import type { DraftVehicle } from "../types";
+import { useVehicleStore } from "../store";
 
 export default function VehicleForm() {
+  const addVehicle = useVehicleStore((state) => state.addVehicle);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<DraftVehicle>({ mode: "onChange" });
 
   const registerVehicle = (data: DraftVehicle) => {
-    console.log(data);
+    addVehicle(data);
+    reset();
   };
 
   return (
@@ -97,18 +101,18 @@ export default function VehicleForm() {
         </div>
 
         <div className="mb-5">
-          <label htmlFor="symptoms" className="text-sm uppercase font-bold">
+          <label htmlFor="issue" className="text-sm uppercase font-bold">
             Issue Description
           </label>
           <textarea
-            id="symptoms"
+            id="issue"
             className="w-full p-3  border border-gray-100"
             placeholder="Describe the vehicle's issue"
-            {...register("symptoms", {
-              required: "The symptoms are mandatory",
+            {...register("issue", {
+              required: "The issue is mandatory",
             })}
           />
-          {errors.symptoms && <Error>{errors.symptoms.message}</Error>}
+          {errors.issue && <Error>{errors.issue.message}</Error>}
         </div>
 
         <input
